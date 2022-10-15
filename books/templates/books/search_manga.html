@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+  h1 {
+    text-align: center;
+  }
+
+  div {
+    text-align: center;
+    display: inline-block;
+    width: 250px;
+  }
+
+  #link {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  #link:hover {
+    text-decoration: underline;
+  }
+</style>
+{% if searched %}
+<h1>Your Search Results:</h1>
+<br />
+{% for manga in mangas %}
+<div>
+  <a href="{% url 'books:detail' manga.id %}" style="text-decoration: none"
+    ><img src="{{ manga.manga_image.url }}" width="200" /></a
+  ><br />
+  <a id="link" href="{% url 'books:detail' manga.id %}">{{ manga.title }}</a
+  ><br />
+</div>
+{% endfor %} {% else %}
+<h1>Hey! You Forgot To Search For A Manga...</h1>
+{% endif %} {% endblock %}

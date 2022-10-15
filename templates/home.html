@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .description {
+        text-align: center;
+        margin-top: 50px;
+        font-size: large;
+        font-weight: 500;
+
+    }
+
+    .url {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+        color: black;
+        background-color: lightsalmon;
+    }
+
+    #url {
+        color: black;
+    }
+</style>
+
+<h1>Welcome to the Manga Book Store!</h1>
+<div class="description">
+    <p>Here at the bookstore, you can find manga different manga thats available for renting out!<br>
+        Either look up a book through the search bar or learn about books through its given description page. <br>
+        To see the list of all the available books in stock, just click the link below and see our amazing collection!
+    </p>
+</div>
+<div class="url">
+    <a id= "url" href="{% url 'books:index' %}">ALL AVAILABLE BOOKS!</a>
+</div>
+{% endblock %}

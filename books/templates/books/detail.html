@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+
+<style>
+    div {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    #info, #pic{
+        margin-top: 80px;
+        width: 350px;
+    }
+    #desc {
+        margin-top: 80px;
+        font-size: large;
+        width: 800px;
+    }
+
+</style>
+<div>
+    <dl id="desc">
+        <dt>Description</dt>
+        <dd>{{ book.description }}</dd>
+    </dl>
+    <dl id="info">
+        <dt>Title</dt>
+        <dd>{{ book.title }}</dd>
+        <dt>Genre</dt>
+        <dd>{{ book.genre }}</dd>
+        <dt>Author</dt>
+        <dd>{{ book.author }}</dd>
+        <dt>Editor</dt>
+        <dd>{{ book.editor }}</dd>
+        <dt>Year Published</dt>
+        <dd>{{ book.year_published }}</dd>
+        <dt>Stock</dt>
+        <dd>{{ book.number_in_stock }}</dd>
+        <dt>Daily Rate</dt>
+        <dd>${{ book.daily_rate }}</dd>
+    </dl>
+    <dl id="pic">
+        <dt>Volume Cover</dt>
+        <dd><img src="{{ book.manga_image.url }}" width=300></dd>
+    </dl>
+</div>
+{% endblock %}
